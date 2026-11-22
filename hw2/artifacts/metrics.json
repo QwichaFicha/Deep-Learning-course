@@ -1,0 +1,98 @@
+{
+  "track": "cv",
+  "model": "yolo26n.pt",
+  "revision": "ultralytics==8.4.216; sha256=9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "dataset": "Raccoon Detector Dataset - https://github.com/datitran/raccoon_dataset - MIT (лицензия репозитория)",
+  "classes": [
+    "raccoon"
+  ],
+  "n_train": 160,
+  "n_val": 40,
+  "n_test": null,
+  "params_total": 2572280,
+  "baseline": {
+    "split": "val",
+    "coco_map50": 0.0,
+    "heuristic_map50": 0.5891608391608392,
+    "heuristic_ap50_per_class": {
+      "raccoon": 0.5891608391608392
+    }
+  },
+  "final": {
+    "precision": 0.9748717642849424,
+    "recall": 0.881817097375229,
+    "map50": 0.9607230022266205,
+    "map50_95": 0.5880640606035297,
+    "per_class": {
+      "raccoon": {
+        "precision": 0.9748717642849424,
+        "recall": 0.881817097375229,
+        "map50": 0.9607230022266205,
+        "map50_95": 0.5880640606035297
+      }
+    },
+    "split": "val",
+    "map50_manual": 0.9627611362485033
+  },
+  "ablation": {
+    "parameter": "freeze",
+    "baseline": {
+      "value": 0,
+      "map50": 0.9607230022266205,
+      "map50_95": 0.5880640606035297,
+      "train_time_sec": 212.7362680929998,
+      "epochs_completed": 60
+    },
+    "frozen": {
+      "value": 11,
+      "map50": 0.9125937666430434,
+      "map50_95": 0.5746925001811819,
+      "train_time_sec": 143.68256628200015,
+      "epochs_completed": 48
+    }
+  },
+  "errors": {
+    "tp": 40,
+    "class": 0,
+    "localization": 2,
+    "background": 1,
+    "missed": 2
+  },
+  "device": "Tesla T4",
+  "train_time_sec": 212.7362680929998,
+  "fast_mode": false,
+  "train_args": {
+    "epochs": 60,
+    "imgsz": 640,
+    "batch": 16,
+    "nbs": 16,
+    "optimizer": "AdamW",
+    "lr0": 0.001,
+    "lrf": 0.1,
+    "momentum": 0.9,
+    "weight_decay": 0.0005,
+    "warmup_epochs": 2.0,
+    "warmup_bias_lr": 0.0,
+    "patience": 12,
+    "degrees": 8.0,
+    "translate": 0.1,
+    "scale": 0.2,
+    "fliplr": 0.5,
+    "flipud": 0.0,
+    "hsv_h": 0.015,
+    "hsv_s": 0.4,
+    "hsv_v": 0.3,
+    "mosaic": 0.0,
+    "mixup": 0.0,
+    "val": true,
+    "amp": true,
+    "seed": 0,
+    "deterministic": true,
+    "plots": false
+  },
+  "run_times": {
+    "heuristic": 0.07727680800007874,
+    "train": 212.7362680929998,
+    "ablation": 143.68256628200015
+  }
+}
